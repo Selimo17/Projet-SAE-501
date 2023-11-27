@@ -67,4 +67,56 @@ router.get("/a-propos(.html)?", async (_req, res) => {
     });
 });
 
+// "(.html)?" makes ".html" optional
+router.get("/sur-les-medias(.html)?", async (_req, res) => {
+    let options = {
+        method: "GET",
+        url: `${res.locals.base_url}/api/saes?per_page=9`,
+    };
+
+    let result = null;
+    try {
+        result = await axios(options);
+    } catch (e) {}
+
+    res.render("pages/front-end/sur-les-medias.njk", {
+        list_saes: result.data,
+    });
+});
+
+// "(.html)?" makes ".html" optional
+router.get("/contact(.html)?", async (_req, res) => {
+    let options = {
+        method: "GET",
+        url: `${res.locals.base_url}/api/saes?per_page=9`,
+    };
+
+    let result = null;
+    try {
+        result = await axios(options);
+    } catch (e) {}
+
+    res.render("pages/front-end/contact.njk", {
+        list_saes: result.data,
+    });
+});
+
+// "(.html)?" makes ".html" optional
+router.get("/lieu-de-vie(.html)?", async (_req, res) => {
+    let options = {
+        method: "GET",
+        url: `${res.locals.base_url}/api/saes?per_page=9`,
+    };
+
+    let result = null;
+    try {
+        result = await axios(options);
+    } catch (e) {}
+
+    res.render("pages/front-end/lieu-de-vie.njk", {
+        list_saes: result.data,
+    });
+});
+
+
 export default router;
