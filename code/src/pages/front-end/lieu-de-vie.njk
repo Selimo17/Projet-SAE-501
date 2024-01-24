@@ -1,1 +1,65 @@
 {% extends "layouts/front-end/base.njk" %}
+{% set bubble_color = "gris" %}
+{% block title %} Lieu-de-vie
+{% endblock %}
+
+{% block main %}
+
+    <h1 class="text-3xl font-bold mt-12 target:text-[#005A47]" id="{{ list_anchors[1].hash }}">
+        LIEU DE VIE 
+    </h1>
+
+    <p class="text" id="{{ list_anchors[0].hash }}">
+        Le BUT métiers du multimédia et de l'internet (MMI) remplace le DUT MMI à partir de la rentrée 2021, 
+        auparavant appelé DUT SRC (services et réseaux de communication) jusqu'en mai 2013
+    </p>
+
+<div class="container">
+    <figure class="animated-figure from-right">
+        <img class="image" src="images/biblio.jpg" alt="">
+    </figure>
+
+    <p class="text" >
+        <strong>Bibliotheque Universitaire</strong> <br>
+        Lorsque cette formation était proposée sous la forme d'un Diplôme Universitaire Technologique (DUT),
+        elle se déroulait sur deux années (1 800 heures). En théorie, elle est accessible à tous les bacheliers,
+        quelle que soit leur série. En moyenne, il y a de 30 à 35 heures de cours par semaine. Cette formation se divise en trois grands
+        pôles, auxquels il faut ajouter le projet tutoré (300 heures) et les stages (420 heures).
+    </p>
+    </div>
+</div>
+
+
+<div class="container">
+    <p class="text">
+          <strong> Se Restaurer </strong> <br>
+        Lorsque cette formation était proposée sous la forme d'un Diplôme Universitaire Technologique (DUT),
+        elle se déroulait sur deux années (1 800 heures). En théorie, elle est accessible à tous les bacheliers,
+        quelle que soit leur série. En moyenne, il y a de 30 à 35 heures de cours par semaine. Cette formation se divise en trois grands
+        pôles, auxquels il faut ajouter le projet tutoré (300 heures) et les stages (420 heures).   
+    </p>
+
+    <figure class="animated-figure from-left" >
+        <img class="image" src="images/resto.jpg" alt="">
+    </figure>
+</div>
+
+<div class="container">
+
+    <figure class="animated-figure from-right">
+        <img class="image" src="images/work1.jpg" alt="">
+    </figure>
+
+    <p class="text" >
+        <strong>FabLab</strong> <br>
+        Lorsque cette formation était proposée sous la forme d'un Diplôme Universitaire Technologique (DUT),
+        elle se déroulait sur deux années (1 800 heures). En théorie, elle est accessible à tous les bacheliers,
+        quelle que soit leur série. En moyenne, il y a de 30 à 35 heures de cours par semaine. Cette formation se divise en trois grands
+        pôles, auxquels il faut ajouter le projet tutoré (300 heures) et les stages (420 heures).
+    </p>
+    </div>
+</div>
+
+<script src="/scripts/front-end/lieudevie.js"></script>
+
+{% endblock %}

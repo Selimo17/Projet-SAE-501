@@ -1,22 +1,9 @@
 {% extends "layouts/front-end/base.njk" %}
-
-{% block title %}A propos
+{% set bubble_color = "vert" %}
+{% block title %} A propos
 {% endblock %}
 
-{% set list_anchors = [
-    {
-        name: "Présentation",
-        hash: "presentation"
-    },
-    {
-        name: "SAÉ",
-        hash: "sae"
-    },
-    {
-        name: "Exemples de SAÉ",
-        hash: "exemples"
-    }
-] %}
+
 
 {% block main %}
     <ul class="flex justify-center gap-x-4 bg-neutral-50 my-9 sm:flex-row flex-col gap-y-3">
@@ -28,11 +15,19 @@
     </ul>
 
     <p class="my-4" id="{{ list_anchors[0].hash }}">
-        Le BUT métiers du multimédia et de l'internet (MMI) remplace le DUT MMI à partir de la rentrée 2021, auparavant appelé DUT SRC (services et réseaux de communication) jusqu'en mai 2013, qui était lancé à la rentrée universitaire 1994 par les IUT de Vélizy, Marne-la-Vallée, Saint-Raphaël et Verdun. Ce BUT offre une alternative aux anciens diplômes Bac+3, tels que la licence professionnelle en activités et techniques de communication et la licence professionnelle en systèmes informatiques et logiciels.
+        Le BUT métiers du multimédia et de l'internet (MMI) remplace le DUT MMI à partir de la rentrée 2021, 
+        auparavant appelé DUT SRC (services et réseaux de communication) jusqu'en mai 2013, qui était lancé à la rentrée universitaire 
+        1994 par les IUT de Vélizy, Marne-la-Vallée, Saint-Raphaël et Verdun. Ce BUT offre une alternative aux anciens diplômes Bac+3, 
+        tels que la licence professionnelle en activités et techniques de communication et la licence professionnelle en systèmes 
+        informatiques et logiciels.
     </p>
 
     <p class="my-4">
-        Lorsque cette formation était proposée sous la forme d'un Diplôme Universitaire Technologique (DUT), elle se déroulait sur deux années (1 800 heures). En théorie, elle est accessible à tous les bacheliers, quelle que soit leur série. En moyenne, il y a de 30 à 35 heures de cours par semaine. Cette formation se divise en trois grands pôles, auxquels il faut ajouter le projet tutoré (300 heures) et les stages (420 heures). Les trois grands axes sont les suivants :
+        Lorsque cette formation était proposée sous la forme d'un Diplôme Universitaire Technologique (DUT), 
+        elle se déroulait sur deux années (1 800 heures). En théorie, elle est accessible à tous les bacheliers, 
+        quelle que soit leur série. En moyenne, il y a de 30 à 35 heures de cours par semaine. Cette formation se divise en trois grands 
+        pôles, auxquels il faut ajouter le projet tutoré (300 heures) et les stages (420 heures). Les trois grands axes sont les 
+        suivants :
     </p>
 
     <ul class="list-disc list-inside">

@@ -5,6 +5,7 @@ import Article from './models/article.js'
 import SAE from './models/sae.js'
 
 
+
 let envFilePath = ".env.prod.local";
 if (process.env.NODE_ENV === "development") {
   envFilePath = ".env.dev.local";
@@ -24,5 +25,3 @@ const main = async () => {
 }
 
 export default main;
-
-// node database/index.js --input-type=module
