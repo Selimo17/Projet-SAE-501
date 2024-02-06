@@ -34,6 +34,8 @@ const parseManifest = async () => {
     return JSON.parse(manifestFile);
 };
 
+//page d'accueil 
+// le / est pour la page d'accueil
 router.get("/", async (req, res) => {
     const queryParams = new URLSearchParams(req.query).toString();
     let options = {
@@ -47,6 +49,24 @@ router.get("/", async (req, res) => {
 
     res.render("pages/front-end/index.njk", {
         list_articles: result.data,
+    });
+});
+
+//page article details
+// le /: récupère l'id de l'article de l'admin
+//information sur l'article injecté sur la page mais pas récupéré
+router.get("/articles/:id", async (req,res)=> {
+    let options = {
+        method: "GET",
+        url: `${res.locals.base_url}/api/articles/${req.params.id}`,
+    };
+    let result = null;
+    try {
+        result = await axios(options);
+    } catch (e) {}
+
+    res.render("pages/front-end/article.njk", {
+       article: result.data,
     });
 });
 

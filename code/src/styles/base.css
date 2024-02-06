@@ -6,6 +6,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: blue;
 }
 
 @media (prefers-reduced-motion: reduce) {
