@@ -10,7 +10,9 @@ import SAE from "#models/sae.js";
 // Routers
 import SAERouter from './sae.js'
 import ArticleRouter from './article.js'
-import messageRouter from './message.js'
+// Importation du route pour Authors
+import AuthorRouter from './author.js'
+
 const router = express.Router();
 
 const parseManifest = async () => {
@@ -45,7 +47,8 @@ router.use(async (_req, res, next) => {
 
 router.use(SAERouter)
 router.use(ArticleRouter)
-router.use(messageRouter)
+// Utilisation du route pour Author
+router.use(AuthorRouter)
 
 router.get("/", async (_req, res) => {
     const queryParams = querystring.stringify({ per_page: 5 });

@@ -1,5 +1,7 @@
 {% extends "layouts/back-end/base.njk" %}
 
+{% block title %}SAÉS{% endblock %}
+
 {% set page_name = "saes" %}
 
 {% import "components/back-end/pagination.njk" as pagination with context %}
@@ -8,10 +10,10 @@
 	<div class="bg-white rounded-2xl shadow-md pb-6">
 		<header class="mb-1 p-6 pl-8 flex justify-between lg:flex-row flex-col">
 			<p class="text-4xl">
-            Liste SAEs
+            Liste SAÉS
                 <span class="block text-sm">{{ list_saes.count }} éléments au total</span>
             </p>
-            <a href="{{ admin_url ~ "/saes/add" }}" class="text-md items-center text-blue-500 hover:text-blue-900">Ajouter une nouvelle SAE</a>
+            <a href="{{ admin_url ~ "/saes/add" }}" class="text-md items-center text-blue-500 hover:text-blue-900">Ajouter une nouvelle SAÉ</a>
 		</header>
 
 		<table class="w-full table-fixed bg-white rounded-lg overflow-hidden border-collapse">
@@ -30,7 +32,7 @@
 						<td class="p-4 pl-8 bg-transparent border-solid border-slate-200 border-b shadow-transparent" data-label="Description">
 							<p class="line-clamp-2 md:line-clamp-1" title="{{ item.content }}">{{ item.content }}</p>
 						</td>
-						<td class="p-4 pl-8 bg-transparent border-solid border-slate-200 border-b shadow-transparent"><a href="{{ admin_url ~ '/saes/' ~ item._id }}" class="text-blue-500 hover:text-blue-900 block sm:inline-block w-full sm:w-fit text-left">Editer</a></td>
+						<td class="p-4 pl-8 bg-transparent border-solid border-slate-200 border-b shadow-transparent"><a href="{{ admin_url ~ '/saes/' ~ item._id }}" class="text-blue-500 hover:text-blue-900 block sm:inline-block w-full sm:w-fit text-left">Éditer</a></td>
 						<td class="p-4 pl-8 bg-transparent border-solid border-slate-200 border-b shadow-transparent">
                             <button type="button" class="text-red-600 block sm:inline-block sm:w-fit w-full text-left" data-item-data='{{ item|dump|e }}' data-delete-url="{{ base_url ~ "/api/saes/" ~ item._id  }}">Supprimer</button>
                         </td>

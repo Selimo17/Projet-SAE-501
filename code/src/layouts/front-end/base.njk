@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/fonts.css">
+    <!-- Import du favicon front -->
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png" alt="logo">
     {% if NODE_ENV != "development" %}
         <link rel="stylesheet" href="/{{ manifest['style.css'].file }}" />
     {% endif %}
@@ -31,6 +33,38 @@
     {% block main %}{% endblock %}
     </main>
 
+        <footer class="pied-de-page-principal conteneur-1280">
+        <p>Certains textes sont issus de Wikipédia</p>
+        <ul class="liste-liens">
+        <li>
+            <a aria-label="Ouverture dans un nouvel onglet" href="https://fr-fr.facebook.com/CYCergyParisUniversite/" title="Ouverture dans un nouvel onglet" target="_blank">Facebook</a>
+        </li>
+        <li>
+            <a aria-label="Ouverture dans un nouvel onglet" href="https://twitter.com/universitecergy?lang=fr" title="Ouverture dans un nouvel onglet"  target="_blank">Twitter</a>
+        </li>
+        <li>
+            <a aria-label="Ouverture dans un nouvel onglet" href="https://fr-fr.facebook.com/CYCergyParisUniversite/" title="Ouverture dans un nouvel onglet"  target="_blank">Université CY Paris Université</a>
+        </li>
+        <li aria-hidden="true">
+            •
+        </li>
+        <li>
+            <a href="#" class="remonter-lien">Remonter</a>
+        </li>
+        </ul>
+
+        <p class="txt-credits">© 2021 - <span id="annee"></span> - BUT MMI - CY Paris Université - Site de Sarcelles</p>
+
+        <center>
+        <figure class="logo">
+        <img src="/images/logo-cyu-couleur.svg" alt="image logo indisponible">
+        </figure>
+        </center>
+
+        <script>
+            document.getElementById("annee").innerHTML = new Date().getFullYear();
+        </script>
+        </footer>
 
 </body>
 </html>

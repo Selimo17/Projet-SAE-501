@@ -118,5 +118,23 @@ router.get("/lieu-de-vie(.html)?", async (_req, res) => {
     });
 });
 
+// Erreur 404
+
+// L'indice "*" pour indiquer que si tout les liens n'ont pas fonctionner ont renvoie cette page.
+router.get("*", async (req, res) => {
+    const queryParams = new URLSearchParams(req.query).toString();
+    let options = {
+        method: "GET",
+        url: `${res.locals.base_url}/api/articles?${queryParams}`,
+    };
+    let result = null;
+    try {
+        result = await axios(options);
+    } catch (e) {}
+
+    res.render("pages/front-end/404.njk", {
+        list_articles: result.data,
+    });
+});
 
 export default router;

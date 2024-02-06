@@ -1,9 +1,11 @@
 {% extends "layouts/back-end/base.njk" %}
 
+{% block title %}Accueil{% endblock %}
+
 {% block main %}
     <div class="bg-white rounded-2xl mb-10 shadow-md">
         <header class="mb-6 p-6 pl-8 text-4xl">
-            <p>Liste SAEs
+            <p>Liste SAÉS
                 <span class="block text-sm">{{ list_saes.count }} éléments au total</span>
             </p>
         </header>
@@ -26,7 +28,7 @@
                             <p class="line-clamp-2 md:line-clamp-1" title="{{ item.content }}">{{ item.content }}</p>
                         </td>
                         <td class="bg-transparent border-solid border-slate-200 border-b p-4 pl-8" data-label="Dernière mise à jour">{{ item.updated_at|date("DD/M/YYYY à HH:mm") }}</td>
-                        <td class="p-4 pl-8 bg-transparent border-solid border-slate-200 border-b shadow-transparent"><a href="{{ admin_url ~ '/saes/' ~ item._id }}" class="text-blue-500 hover:text-blue-900 block sm:inline-block w-full text-left sm:w-fit">Editer</a></td>
+                        <td class="p-4 pl-8 bg-transparent border-solid border-slate-200 border-b shadow-transparent"><a href="{{ admin_url ~ '/saes/' ~ item._id }}" class="text-blue-500 hover:text-blue-900 block sm:inline-block w-full text-left sm:w-fit">Éditer</a></td>
                         <td class="p-4 pl-8 bg-transparent border-solid border-slate-200 border-b shadow-transparent">
                             <button type="button" class="text-red-600 block sm:inline-block w-full text-left sm:w-fit" data-item-data='{{ item|dump|e }}' data-delete-url="{{ base_url ~ "/api/saes/" ~ item._id }}">Supprimer</button>
                         </td>
@@ -70,7 +72,7 @@
                         <td class="p-4 pl-8 bg-transparent border-solid border-slate-200 border-b shadow-transparent" data-label="Description">
                             <p class="line-clamp-2 md:line-clamp-1" title="{{ item.content }}">{{ item.content }}</p>
                         </td>
-                        <td class="p-4 pl-8 bg-transparent border-solid border-slate-200 border-b shadow-transparent"><a href="{{ admin_url ~ '/articles/' ~ item._id }}" class="text-blue-500 hover:text-blue-900 block sm:inline-block w-full text-left sm:w-fit">Editer</a></td>
+                        <td class="p-4 pl-8 bg-transparent border-solid border-slate-200 border-b shadow-transparent"><a href="{{ admin_url ~ '/articles/' ~ item._id }}" class="text-blue-500 hover:text-blue-900 block sm:inline-block w-full text-left sm:w-fit">Éditer</a></td>
                         <td class="p-4 pl-8 bg-transparent border-solid border-slate-200 border-b shadow-transparent">
                             <button type="button" class="text-red-600 block sm:inline-block w-full text-left sm:w-fit" data-item-data='{{ item|dump|e }}' data-delete-url="{{ base_url ~ "/api/articles/" ~ item._id }}">Supprimer</button>
                         </td>

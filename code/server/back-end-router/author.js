@@ -45,7 +45,7 @@ router.get([`/${base}/:id`, `/${base}/add`], async (req, res) => {
         }
     }
 
-    res.render("/", {
+    res.render("pages/back-end/authors/add-edit.njk", {
         author: result?.data || {},
         list_errors: listErrors,
         is_edit: isEdit,
@@ -89,7 +89,8 @@ router.post(`/${base}/:id`, upload.single("image"), async (req, res) => {
         ressource = e.response.data.ressource || {}
     } finally {
         if (listErrors.length || isEdit) {
-            res.render("", {
+            // Ajout du lien add edit
+            res.render("pages/back-end/authors/add-edit.njk", {
                 sae: ressource,
                 list_errors: listErrors,
                 is_edit: isEdit,
