@@ -2,16 +2,10 @@ import "/src/styles/base.css";
 import "/src/styles/hero.scss";
 import "/src/styles/index.scss";
 import "/src/styles/tailwind.css";
-<<<<<<< HEAD
-import "/src/styles/front-end/vie.css";
-
-
-
-=======
 import "/src/styles/front-end/contact.css";
+import "/src/styles/front-end/vie.css";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';
->>>>>>> b92f3da71e8712cc9001a8fa5da0b3d386901f28
 
 // Keep scroll position between page in navigation for mobile
 const sidebar = document.querySelector("[data-navigation]");
