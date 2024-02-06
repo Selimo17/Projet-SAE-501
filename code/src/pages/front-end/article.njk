@@ -1,0 +1,20 @@
+{% extends "layouts/front-end/base.njk" %}
+
+{% block title %}L'article
+{% endblock %}
+
+
+{% block main %}
+
+                    <a class="block" href="{{ '/articles/' ~ article._id }}">
+                        <figure>
+                            <img class="w-full" src="{{'/uploads/' ~ article.image }}" alt="{{ article.title }}">
+                        </figure>
+                        <section class="p-8 pb-14">
+                            <p class="text-2xl font-bold">{{ article.title }}</p>
+                            <p>{{ article.content }}</p>
+                        </section>
+                    </a>
+            
+{% endblock %}
+

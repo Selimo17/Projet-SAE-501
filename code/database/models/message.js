@@ -4,7 +4,6 @@ import validator from "validator";
 
 
 const messageShema = new Schema({
-
     lastname:
     {
         type: String,
@@ -17,8 +16,6 @@ const messageShema = new Schema({
         type: String,
         required: [true, "Prenom requis"]
     },
-
-
     email:
     {
         type: String,
@@ -32,8 +29,6 @@ const messageShema = new Schema({
         type: String,
         required: [true, "content requis"],
     },
-
-
     type: {
         type: String,
         enum: ["non_precise", "autre", "etudiant", "parent"],
