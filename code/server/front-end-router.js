@@ -50,6 +50,21 @@ router.get("/", async (req, res) => {
     });
 });
 
+router.get("/articles/:id", async (req,res)=> {
+    let options = {
+        method: "GET",
+        url: `${res.locals.base_url}/api/articles/${req.params.id}` ,
+    };
+    let result = null;
+    try {
+        result = await axios(options);
+    } catch (e) {}
+
+    res.render("pages/front-end/article.njk", {
+       article: result.data,
+    });
+});
+
 // "(.html)?" makes ".html" optional
 router.get("/a-propos(.html)?", async (_req, res) => {
     let options = {
