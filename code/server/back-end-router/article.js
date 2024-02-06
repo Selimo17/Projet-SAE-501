@@ -89,8 +89,8 @@ router.post(`/${base}/:id`, upload.single("image"), async (req, res) => {
         ressource = e.response.data.ressource || {}
     } finally {
         if (listErrors.length || isEdit) {
-            res.render("", {
-                sae: ressource,
+            res.render("pages/back-end/articles/add-edit.njk", {
+                article: ressource,
                 list_errors: listErrors,
                 is_edit: isEdit,
                 is_success: listErrors.length === 0

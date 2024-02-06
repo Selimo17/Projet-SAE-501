@@ -1,0 +1,140 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: #172b4c;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: 1.5;
+}
+
+.box-header {
+  color: #172b4c;
+  display: block;
+  padding: 1.5rem;
+  position: relative;
+  border-bottom: 1px solid #EFEFFD;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.box-header .box-title {
+  display: inline-block;
+  margin: 0;
+  font-weight: 400;
+}
+
+
+
+.box {
+  position: relative;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 0px;
+  -webkit-transition: .5s;
+  transition: .5s;
+
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0);
+  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0);
+  border: 1px solid #EFEFFD;
+}
+
+.box-body {
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.box-body .box-title {
+  display: inline-block;
+  margin: 0;
+  margin-bottom: 1rem;
+  color: #172b4c;
+}
+
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: 0.25;
+}
+
+ .h4 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400 !important;
+  line-height: 1.2;
+}
+
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) / -2);
+  margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+
+.col-md-6{
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  font-weight: 500;
+}
+
+.form-label {
+  margin-bottom: 0.5rem;
+}
+label {
+  display: inline-block;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control, .form-select {
+  border-radius: 5px;
+  box-shadow: none;
+  border-color: #86a4c3;
+  height: auto;
+}
+
+.box-footer {
+  border-top: 1px solid #EFEFFD;
+  padding: 1.5rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.theme-primary .btn-warning {
+  background-color: #ffa800;
+  border-color: #ffa800;
+  color: #ffffff;
+}

@@ -10,7 +10,7 @@ import SAE from "#models/sae.js";
 // Routers
 import SAERouter from './sae.js'
 import ArticleRouter from './article.js'
-
+import messageRouter from './message.js'
 const router = express.Router();
 
 const parseManifest = async () => {
@@ -45,6 +45,7 @@ router.use(async (_req, res, next) => {
 
 router.use(SAERouter)
 router.use(ArticleRouter)
+router.use(messageRouter)
 
 router.get("/", async (_req, res) => {
     const queryParams = querystring.stringify({ per_page: 5 });
