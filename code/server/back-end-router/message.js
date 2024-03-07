@@ -8,7 +8,7 @@ import querystring from "querystring";
 const base = "messages";
 const router = express.Router();
 
-// Get or create SAE
+// Get or create message
 router.get(`/${base}`, async (req, res) => {
     const queryParams = querystring.stringify(req.query);
 
@@ -26,7 +26,7 @@ router.get(`/${base}`, async (req, res) => {
     });
 });
 
-// Get or create SAE
+// Get or create message
 router.get(`/${base}/:id`, async (req, res) => {
     let options = {
         method: "GET",
@@ -46,12 +46,15 @@ router.get(`/${base}/:id`, async (req, res) => {
         }
     
 
-    res.render("pages/back-end/saes/add-edit.njk", {
-        sae: result?.data || {},
+    res.render("pages/front-end/contact.njk", {
+        article: result?.data || {},
         list_errors: listErrors,
         is_edit: isEdit,
     });
 });
+
+
+
 
 
 export default router;

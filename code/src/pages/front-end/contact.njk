@@ -1,20 +1,23 @@
 {% extends "layouts/front-end/base.njk" %}
 {% set bubble_color = "jaune" %}
 
+{% block title %} Contactez-nous
+{% endblock %}
+
 {% block main %}
 <h1 class="text-3xl font-bold mb-4 text-center">Plus d'infos sur la formation?</h1>
 <h1 class="text-3xl font-bold mb-4 text-center">Contactez-nous!</h1>
-<p>On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte.</p>
-   <h1 class="text-3xl font-bold mb-4 text-center">Nous Contacter</h1>
+
     <section class="flex justify-center items-center flex-col-reverse lg:flex-row sm:gap-x-10 gap-y-6">
-        <form class="w-full max-w-md" method="post" action="/submit-contact-form">
+
+        <form class="w-full max-w-md" method="post" data-form="contact">
             <div class="mb-6">
                 <label for="firstName" class="block text-sm font-medium text-gray-600">Prénom</label>
-                <input type="text" id="firstName" name="firstName" class="mt-1 p-2 border border-gray-300 rounded-md w-full" required>
+                <input type="text" id="firstName" name="firstname" class="mt-1 p-2 border border-gray-300 rounded-md w-full" required>
             </div>
             <div class="mb-6">
                 <label for="lastName" class="block text-sm font-medium text-gray-600">Nom</label>
-                <input type="text" id="lastName" name="lastName" class="mt-1 p-2 border border-gray-300 rounded-md w-full" required>
+                <input type="text" id="lastName" name="lastname" class="mt-1 p-2 border border-gray-300 rounded-md w-full" required>
             </div>
             <div class="mb-6">
                 <label for="email" class="block text-sm font-medium text-gray-600">Adresse Email</label>
@@ -22,25 +25,25 @@
             </div>
             <div class="mb-6">
                 <label for="message" class="block text-sm font-medium text-gray-600">Message</label>
-                <textarea id="message" name="message" class="mt-1 p-2 border border-gray-300 rounded-md w-full" rows="4" required></textarea>
+                <textarea id="message" name="content" class="mt-1 p-2 border border-gray-300 rounded-md w-full" rows="4" required></textarea>
             </div>
             <div class="mb-6">
                 <label class="block text-sm font-medium text-gray-600">Je suis</label>
                 <div class="flex items-center">
                     <label class="inline-flex items-center mr-4">
-                        <input type="radio" name="status" value="not_specified" class="form-radio" checked>
+                        <input type="radio" name="type" value="not_specified" class="form-radio" checked>
                         <span class="ml-2">Je ne souhaite pas le préciser</span>
                     </label>
                     <label class="inline-flex items-center mr-4">
-                        <input type="radio" name="status" value="student" class="form-radio">
+                        <input type="radio" name="type" value="etudiant" class="form-radio">
                         <span class="ml-2">Je suis étudiant</span>
                     </label>
                     <label class="inline-flex items-center mr-4">
-                        <input type="radio" name="status" value="parent" class="form-radio">
+                        <input type="radio" name="type" value="parent" class="form-radio">
                         <span class="ml-2">Parent</span>
                     </label>
                     <label class="inline-flex items-center">
-                        <input type="radio" name="status" value="other" class="form-radio">
+                        <input type="radio" name="type" value="autre" class="form-radio">
                         <span class="ml-2">Autre</span>
                     </label>
                 </div>
@@ -48,4 +51,8 @@
             <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md">Envoyer</button>
         </form>
     </section>
+
+    
+
+
 {% endblock %}

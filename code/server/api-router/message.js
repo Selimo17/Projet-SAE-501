@@ -190,6 +190,8 @@ router.post(`/${base}`, async (req, res) => {
     }
 
     const ressource = new message({ ...req.body });
+    
+    console.log(req.body);
 
     await ressource.save().then(() => {
         res.status(201).json(ressource)
@@ -240,7 +242,10 @@ router.post(`/${base}`, async (req, res) => {
  *             schema:
  *               $ref: '#/components/schemas/Error'
  */
-router.delete(`/${base}/:id`, async (req, res) => {
+
+
+
+/**  router.delete(`/${base}/:id`, async (req, res) => {
     try {
         const ressource = await SAE.findByIdAndDelete(req.params.id)
 
@@ -262,6 +267,6 @@ router.delete(`/${base}/:id`, async (req, res) => {
                 error: "Quelque chose s'est mal passé, veuillez recommencer",
             });
     }
-});
+}); */
 
 export default router;

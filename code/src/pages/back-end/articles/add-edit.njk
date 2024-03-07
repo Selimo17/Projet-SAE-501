@@ -1,6 +1,6 @@
 {% extends "layouts/back-end/base.njk" %}
 
-{% set chars_limit = 200 %}
+{% set chars_limit = 2000 %}
 {% set page_name = "articles" %}
 
 {% import "components/back-end/input-file.njk" as input_file %}
@@ -52,6 +52,26 @@
 						caractères
 					</p>
 					<p id="error-content" class="text-red-500 hidden" data-error-message="content">Il faut mettre du contenut</p>
+				</label>
+
+				<label>
+					 <select id="authorsDropdown">
+        <option value="">Sélectionnez un auteur</option>
+    </select>
+
+    <script>
+        fetch('/authors')
+            .then(response => response.json())
+            .then(authors => {
+                const dropdown = document.getElementById('authorsDropdown');
+                authors.forEach(author => {
+                    const option = document.createElement('option');
+                    option.text = author;
+                    dropdown.add(option);
+                });
+            })
+            .catch(error => console.error('Error fetching authors:', error));
+    </script>
 				</label>
 
 				<button class="mt-3 px-4 py-2 font-semibold text-sm bg-cyan-500 hover:bg-cyan-600 text-white rounded-2xl shadow-sm" type="submit">Sauvegarder</button>
