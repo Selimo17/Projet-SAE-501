@@ -32,7 +32,9 @@
 </head>
 <body class="px-8">
     {% include "components/front-end/navigation.njk" %} 
-      <main class="max-w-[1280px] mx-auto">
+        {% include "components/front-end/hero.njk" %}
+
+    <main class="max-w-[1280px] mx-auto">
     {% block main %}{% endblock %}
     </main>
 
