@@ -139,4 +139,20 @@ router.get("/lieu-de-vie(.html)?", async (_req, res) => {
 });
 
 
+router.get("/auteur(.html)?", async (_req, res) => {
+    let options = {
+        method: "GET",
+        url: `${res.locals.base_url}/api/saes?per_page=9`,
+    };
+
+    let result = null;
+    try {
+        result = await axios(options);
+    } catch (e) {}
+
+    res.render("pages/front-end/auteur.njk", {
+        list_saes: result.data,
+    });
+});
+
 export default router;

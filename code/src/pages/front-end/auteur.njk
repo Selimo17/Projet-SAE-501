@@ -1,0 +1,36 @@
+{% extends "layouts/front-end/base.njk" %}
+{% set bubble_color = "rose" %}
+
+{% block main %}
+
+<h1 class="text-3xl font-bold mb-4 target:text-[#005A47] text-center" id="{{ list_anchors[1].hash }}">
+    Auteur
+</h1> 
+
+<div class="flex justify-center items-center h-full">
+    <div class="container mx-16 bg-white p-8 rounded-lg shadow-lg flex"> <!-- Ajout de la classe flex -->
+    
+        <div class="w-1/2 flex justify-center items-center"> <!-- Diviser en deux, avec une moitié pour l'image -->
+            <figure class="animated-figure from-right mr-8">
+                <img class="image rounded-full hover:text-white hover:bg-black transition-colors duration-300 object-cover w-full h-auto" src="images/auteur.jpg" alt="Auteur" title="Safe"> <!-- Augmenter la taille de l'image -->
+            </figure>
+        </div>
+
+        <div class="w-1/2 p-4"> <!-- Diviser en deux, avec une moitié pour le texte -->
+            <p class="text11">
+                <strong>Biographie auteur</strong><br>
+                Lorsque cette formation était proposée sous la forme d'un Diplôme Universitaire Technologique (DUT),
+                elle se déroulait sur deux années (1 800 heures). En théorie, elle est accessible à tous les bacheliers,
+                quelle que soit leur série. En moyenne, il y a de 30 à 35 heures de cours par semaine. Cette formation se divise en trois grands
+                pôles, auxquels il faut ajouter le projet tutoré (300 heures) et les stages (420 heures).
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
