@@ -2,6 +2,7 @@ import "/src/styles/base.css";
 import "/src/styles/hero.scss";
 import "/src/styles/index.scss";
 import "/src/styles/tailwind.css";
+import "/src/styles/footer.scss";
 import "/src/styles/front-end/contact.css";
 import "/src/styles/front-end/vie.css";
 import "./front-end/contact.js"

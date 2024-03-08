@@ -1,0 +1,35 @@
+// Cercle couleur pour "list" de "authors"
+
+table td .cercle {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin-bottom: 7px;
+  }
+
+// CSS pour le champ "color" du formulaire de la page "add-edit" de "authors"
+
+@media screen and (max-width: 600px) {
+    #couleur_conteneur {
+        text-align: center;
+    }
+  }
+
+#color {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  #color::-webkit-color-swatch {
+    border-radius: 50%;
+    border: none;
+  }
+  #color::-moz-color-swatch {
+    border-radius: 50%;
+    border: none;
+  }

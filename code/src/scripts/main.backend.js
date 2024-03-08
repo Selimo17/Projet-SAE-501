@@ -1,6 +1,7 @@
 import "/src/styles/base.css";
 import "/src/styles/tailwind.css";
 import "/src/styles/back-end/index.scss";
+import "/src/styles/back-end/color.scss";
 import "./back-end/form-validator.js"
 import "./back-end/delete-modal.js"
 import "./back-end/preview-upload.js"

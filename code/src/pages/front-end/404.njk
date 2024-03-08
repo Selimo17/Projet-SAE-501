@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ajout du titre -->
+    <title>{% block title %}Page non trouvée{% endblock %} - SAÉ 501</title>
+
+    <!-- Import du css -->
+    <link rel="stylesheet" href="/styles/404.css">
+    
+    <!-- Import du bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- Import du favicon erreur -->
+    <link rel="shortcut icon" type="image/png" href="/images/favicon-erreur.png" alt="logo">
+</head>
+
+{% block main %}
+
+<body class="erreur">
+    <div class="page-wrap d-flex flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <span class="display-1 d-block">404</span>
+                <div class="mb-4 lead">La page que vous recherchez n’a pas été trouvée.</div>
+                <!-- Lien vers Site BUT MMI (front) -->
+                <a href="/" class="btn btn-link">Site BUT</a>
+                <!-- Lien vers Administration (back) -->
+                <a href="/admin/" class="btn btn-link">Administration</a>
+            </div>
+        </div>
+    </div>
+</div>    
+</body>
+
+{% endblock %}
+
+</html>
