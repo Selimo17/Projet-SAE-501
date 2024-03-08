@@ -1,26 +1,38 @@
+{% set bubble_color = "rose" %}
 {% extends "layouts/front-end/base.njk" %}
 
 {% block main %}
+{% include "components/front-end/hero.njk" %}
     <h1 class="text-3xl font-bold mb-4">Articles sur le BUT MMI</h1>
     <section class="flex justify-between flex-col-reverse lg:flex-row sm:gap-x-10 gap-y-6">
         
-        <ul>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {% for article in list_articles.data %}
                 <li class="w-full mb-6 shadow hover:shadow-xl lg:max-w-[750px]">
                     <a class="block" href="{{ '/articles/' ~ article._id }}">
                         <figure>
                             <img class="w-full" src="{{'uploads/' ~ article.image }}" alt="{{ article.title }}">
                         </figure>
-                        <section class="p-8 pb-14">
-                            <p class="text-2xl font-bold">{{ article.title }}</p>
-                            <p>{{ article.content }}</p>
+                        <section class="p-8 pb-12 max-h-500 overflow-y-auto">                     
+                            <p class="text-2xl font-bold pb-4">{{ article.title }}</p>
+                           <p href="#" class="text-sm pb-3 flex items-center">
+                        <i class="fa fa-calendar mr-1"></i>
+                        <a href="#" class="font-semibold hover:text-pink-500">David Grzyb</a>, Publié le 25 Avril 2020
+                            </p>
+
+                            <p class=" line-clamp-2">{{ article.content }}</p>
+
+                            <button class="bg-transparent border border-pink-500 text-xs text-pink-500 font-bold py-2 px-4 rounded-full hover:bg-pink-300">
+                                <a href="{{ '/articles/' ~ article._id }}" class="text-pink-500">Lire plus <i class="fas fa-arrow-right"></i></a>
+                            </button>           
                         </section>
                     </a>
                 </li>
             {% endfor %}
         </ul>
 
-        <a class="jpo-banniere flex-1 basis-80" href="https://www.cyu.fr/formation/construire-son-projet/salons-journee-portes-ouvertes" title="Ouverture dans un nouvel onglet">
+ <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
+       <a class="w-full jpo-banniere flex-1 basis-80" href="https://www.cyu.fr/formation/construire-son-projet/salons-journee-portes-ouvertes" title="Ouverture dans un nouvel onglet">
             <figure class="logo">
                 <img src="/images/logo-cyu-blanc.png" width="200" alt="">
             </figure>
@@ -35,5 +47,24 @@
                 <p class="en-savoir-plus">EN SAVOIR PLUS</p>
             </section>
         </a>
+
+        <div class="w-full bg-white shadow flex flex-col my-4 p-6">
+                <p class="text-xl font-semibold pb-5">Suivez nous sur Instagram</p>
+                <div class="grid grid-cols-3 gap-3">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=1">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=2">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=3">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=4">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=5">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=6">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=7">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8">
+                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9">
+                </div>
+                <a href="https://www.instagram.com/cy_univ/" class="w-full bg-pink-800 text-white font-bold text-sm uppercase rounded hover:bg-pink-700 flex items-center justify-center px-2 py-3 mt-6">
+                    <i class="fab fa-instagram mr-2"></i> Suivre @cy_univ
+                </a>
+        </div>
+ </aside>
     </section>
 {% endblock %}

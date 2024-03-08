@@ -1,4 +1,3 @@
-{% set bubble_color = "rose" %}
 
 <!DOCTYPE html>
 <html lang="fr" class="bg-neutral-50">
@@ -10,7 +9,8 @@
 
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/fonts.css">
-    <link rel="stylesheet" href="../../styles/front-end/stylecontact.css">
+ 
+    <link rel="stylesheet" href="../../styles/front-end/menu.css">
         
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
@@ -28,11 +28,9 @@
         <script type="module" src="/{{ manifest['src/scripts/main.frontend.js'].file }}" defer></script>
     {% endif %}
 </head>
-<body class="px-4">
+<body class="px-8">
     {% include "components/front-end/navigation.njk" %} 
-    {% include "components/front-end/hero.njk" %}
-
-    <main class="max-w-[1280px] mx-auto">
+      <main class="max-w-[1280px] mx-auto">
     {% block main %}{% endblock %}
     </main>
 
