@@ -2,7 +2,7 @@ import express from "express";
 import path from "path";
 import axios from "axios";
 import fs from "fs/promises";
-
+//gérer le routage côté serveur pour la récupération des articles à partir de la base de données via une API.
 const router = express.Router();
 
 router.use(async (_req, res, next) => {
