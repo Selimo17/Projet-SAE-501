@@ -4,17 +4,108 @@
 {% block title %}L'article
 {% endblock %}
 
-{% block main %}
+{% block main %}      
 
-                    <a class="block" href="{{ '/articles/' ~ article._id }}">
-                        <figure>
-                            <img class="w-full" src="{{'/uploads/' ~ article.image }}" alt="{{ article.title }}">
-                        </figure>
-                        <section class="p-8 pb-14">
-                            <p class="text-2xl font-bold">{{ article.title }}</p>
-                            <p>{{ article.content }}</p>
-                        </section>
-                    </a>
+<body class="bg-white font-sans-serif leading-normal tracking-normal">
+
+  <a class="block" href="{{ '/articles/' ~ article._id }}">
+                        
+                          <!--  <p>{{ article.content }}</p> -->
+  </a>
+	
+	<!--Title-->
+	<div class="text-center pt-16 md:pt-16">
+		<p class="text-sm md:text-base text-yellow-500 font-bold">04 AOUT 2023 <span class="text-yellow-900">/</span> CATEGORIE</p>
+		<h1 class="font-bold break-normal text-3xl md:text-5xl">{{ article.title }}</h1>
+	</div>
+
+
+
+
+
+	<!--image-->
+<div class="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded" style="height: 75vh; background-image: url('{{ '/uploads/' ~ article.image }}');"></div>
+	
+	<!--Container-->
+	<div class="container max-w-5xl mx-auto -mt-32">
+
+		
+		<div class="mx-0 sm:mx-6">
+			
+			<div class="bg-white w-full p-8 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal" style="font-family:Poppins,sans-serif;">
+				
+				<!--Post Content-->
+				<div class="flex w-full items-center font-sans-serif p-8 md:p-8">
+<!-- auteur-->
+                      <img class="w-10 h-10 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar de l'auteur">
+                      <div class="flex-1">
+                          <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">Jese Leos</a>
+                          <p class="text-base font-bold text-base md:text-xl leading-none">Etudiante en developpement web </p>
+                          <p class="text-base text-gray-500 dark:text-gray-400"><time pubdate datetime="2022-02-08" title="February 8th, 2022">Feb. 8, 2022</time></p>
+                      </div>
+					  <div class="justify-end">
+					<button class="bg-transparent border border-yellow-500 hover:border-yellow-500 text-xs text-yellow-500 hover:text-yellow-500 font-bold py-2 px-4 rounded-full">Voir profil</button>
+				</div>
+                  </div>
+
+				<!--Lead Para-->
+				<p class="text-2xl md:text-2xl mb-5">
+                 Welcome fellow <a class="text-gray-800 hover:text-green-500 no-underline border-b-2 border-green-500" href="https://www.tailwindcss.com">Tailwind CSS</a> and <a class="text-gray-800 hover:text-green-500 no-underline border-b-2 border-green-500" href="https://www.ghost.org">Ghost</a> fan.  This starter template is an attempt to replicate the default Ghost theme <a class="text-gray-800 hover:text-green-500 no-underline border-b-2 border-green-500" href="https://demo.ghost.io/welcome">"Casper"</a> using Tailwind CSS and vanilla Javascript.
+				</p>
+
+				<p class="py-6">The basic blog page layout is available and all using the default Tailwind CSS classes (although there are a few hardcoded style tags). If you are going to use this in your project, you will want to convert the classes into components.</p>				
+			
+				<p class="py-6">Sed dignissim lectus ut tincidunt vulputate. Fusce tincidunt lacus purus, in mattis tortor sollicitudin pretium. Phasellus at diam posuere, scelerisque nisl sit amet, tincidunt urna. Cras nisi diam, pulvinar ut molestie eget, eleifend ac magna. Sed at lorem condimentum, dignissim lorem eu, blandit massa. Phasellus eleifend turpis vel erat bibendum scelerisque. Maecenas id risus dictum, rhoncus odio vitae, maximus purus. Etiam efficitur dolor in dolor molestie ornare. Aenean pulvinar diam nec neque tincidunt, vitae molestie quam fermentum. Donec ac pretium diam. Suspendisse sed odio risus. Nunc nec luctus nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nec nulla eget sem dictum elementum.</p>
+
+				<ol>
+					<li class="py-3">Maecenas accumsan lacus sit amet elementum porta. Aliquam eu libero lectus. Fusce vehicula dictum mi. In non dolor at sem ullamcorper venenatis ut sed dui. Ut ut est quam. Suspendisse quam quam, commodo sit amet placerat in, interdum a ipsum. Morbi sit amet tellus scelerisque tortor semper posuere.</li>
+					<li class="py-3">Morbi varius posuere blandit. Praesent gravida bibendum neque eget commodo. Duis auctor ornare mauris, eu accumsan odio viverra in. Proin sagittis maximus pharetra. Nullam lorem mauris, faucibus ut odio tempus, ultrices aliquet ex. Nam id quam eget ipsum luctus hendrerit. Ut eros magna, eleifend ac ornare vulputate, pretium nec felis.</li>
+					<li class="py-3">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc vitae pretium elit. Cras leo mauris, tristique in risus ac, tristique rutrum velit. Mauris accumsan tempor felis vitae gravida. Cras egestas convallis malesuada. Etiam ac ante id tortor vulputate pretium. Maecenas vel sapien suscipit, elementum odio et, consequat tellus.</li>
+				</ol>
+								
+				<!--/ Post Content-->
+						
+			</div>
+			
+			
+				<!--Subscribe-->	
+				<div class="container font-sans-serif bg-yellow-50 rounded mt-8 p-4 md:p-24 text-center">
+					<h2 class="font-bold break-normal text-2xl md:text-3xl">Inscrivez-vous à notre newsletter</h2>
+					<h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Recevez toutes les actualités dans votre boite mail !</h3>
+					<div class="w-full text-center pt-4">
+						<form action="#">
+							<div class="max-w-sm mx-auto p-1 pr-0 flex flex-wrap items-center">
+								<input type="email" placeholder="email@exemple.com" class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+								<button type="submit" class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-yellow-400 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-yellow-300">M'inscrire</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- /Subscribe-->
+
+			<!--Commentaire-->
+				<div class="flex justify-between items-center mb-6 mt-8">
+    <h2 class="text-lg lg:text-2xl font-bold text-gray-900 ">Discussion</h2>
+</div>
+<form class="mb-6">
+    <div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-300 white:bg-gray-800 white:border-gray-700">
+        <label for="comment" class="sr-only">le commentaire</label>
+        <textarea id="comment" rows="6"
+            class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none white:text-white white:placeholder-gray-400 white:bg-gray-800"
+            placeholder="Write a comment..." required></textarea>
+    </div>
+    <button type="submit" class="bg-transparent border border-yellow-500 hover:border-yellow-500 text-s text-yellow-500 hover:text-yellow-500 font-bold py-2 px-4 rounded">Envoyer</button>
+</form>
+
+	</div>
+</div>
+
+</body>
+</html>
+
+
+
+
             
 {% endblock %}
 
