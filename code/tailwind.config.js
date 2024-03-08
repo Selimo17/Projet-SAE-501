@@ -4,6 +4,9 @@ export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,njk}"],
   theme: {
     extend: {
+      backgroundImage :{
+        'faclab' : 'url("/images/faclab.jpg")',
+      },
       spacing: {
         11: "2.75rem",
         12: "3.25rem",

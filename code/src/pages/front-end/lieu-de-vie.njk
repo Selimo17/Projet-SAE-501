@@ -6,7 +6,7 @@
 
 {% block main %}
 {% include "components/front-end/hero.njk" %}
-<div class="flex flex-wrap items-center mt-32">
+<div class="flex flex-wrap items-center mt-32 ">
             <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
 
               <div class="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-pink-300">
@@ -14,6 +14,7 @@
               </div>
 
               <h3 class="text-2xl mb-2 font-semibold leading-normal">Bibliothèque universitaire</h3>
+              <p class="text-left text-pink-700 pb-8">Ressources à portée de main</p>
 
                <p class="text-l font-light leading-relaxed mt-0 mb-4 text-gray-700">
                 Lorsque cette formation était proposée sous la forme d'un Diplôme Universitaire Technologique (DUT), elle se déroulait sur deux années (1 800 heures). En théorie, elle est accessible à tous les bacheliers, quelle que soit leur série. En moyenne, il y a de 30 à 35 heures de cours par semaine. Cette formation se divise en trois grands pôles, auxquels il faut ajouter le projet tutoré (300 heures) et les stages (420 heures).</p>
@@ -22,7 +23,7 @@
         
         <div class="w-full md:w-4/12 mr-auto ml-auto">
               <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-pink-600">
-                <img alt="..." src="images/img-quebec.jpg"class="w-full align-middle rounded-t-lg"/>
+                <img alt="..." src="images/biblio.jpg"class="w-full align-middle rounded-t-lg"/>
               </div>
         </div>
 
@@ -31,7 +32,7 @@
 <div class="flex flex-wrap items-center mt-32">
     <div class="w-full md:w-4/12 mr-auto ml-auto">
         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-pink-600">
-            <img alt="..." src="images/resto.jpg" class="w-full align-middle rounded-t-lg"/>
+            <img alt="..." src="images/restauration.jpg" class="w-full align-middle rounded-t-lg"/>
         </div>
     </div>
     
@@ -41,26 +42,37 @@
         </div>
 
         <h3 class="text-2xl mb-2 font-semibold leading-normal">Se Restaurer</h3>
+        <p class="text-left text-pink-700 pb-8">Un moment de détente et de convivialité</p>
 
         <p class="text-l font-light leading-relaxed mt-0 mb-4 text-gray-700">
-            Lorsque cette formation était proposée sous la forme d'un Diplôme Universitaire Technologique (DUT), elle se déroulait sur deux années (1 800 heures). En théorie, elle est accessible à tous les bacheliers, quelle que soit leur série. En moyenne, il y a de 30 à 35 heures de cours par semaine. Cette formation se divise en trois grands pôles, auxquels il faut ajouter le projet tutoré (300 heures) et les stages (420 heures).</p>
-    </div>
+            Notre cafétéria propose un large éventail de plats chauds et froids, de salades fraîches, de sandwiches savoureux et de collations saines pour combler toutes les petites faims. Que vous préfériez la cuisine traditionnelle, les plats exotiques ou les options végétariennes, vous trouverez toujours quelque chose à votre goût dans notre menu varié.</div>
 </div>
 
 
     <!-- separation -->
     <div class="mx-auto mt-32 max-w-7xl sm:mt-56 sm:px-6 lg:px-8">
-      <div class="relative overflow-hidden bg-gray-900 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
-        <img class="absolute inset-0 h-full w-full object-cover " src="images/resto.jpg" alt="">
+      <div class="relative overflow-hidden bg-cover bg-faclab bg-fixed px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
+        
       </div>
     </div>
 
-    <div class="flex flex-wrap justify-center text-center pt-20 mb-24">
+<h2 class="text-center text-4xl font-bold my-8">FacLab</h2>
+<p class="text-center text-pink-700">Le lieu de vie créatif des étudiants</p>
+
+    <div class="flex flex-wrap items-center text-left mb-24">
+      
+
       <div class="w-full lg:w-6/12 px-4">
-      <h2 class="text-4xl font-semibold">FacLab</h2>
-      <p class="text-l leading-relaxed m-4 text-blueGray-500">According to the National Oceanic and Atmospheric Administration, Ted, Scambos, NSIDClead scentist, puts the potentially record maximum. According to the National Oceanic and Atmospheric Administration, Ted, Scambos, NSIDClead scentist, puts the potentially record maximum.According to the National Oceanic and Atmospheric Administration, Ted, Scambos, NSIDClead scentist, puts the potentially record maximum.</p>
+      <p class="text-l leading-relaxed m-4 text-blueGray-500">Le Faclab est bien plus qu'un simple espace de travail. C'est un lieu où les étudiants peuvent laisser libre cours à leur créativité, explorer de nouvelles idées et collaborer sur des projets innovants. Installé au cœur de notre campus, le Faclab est un véritable laboratoire d'innovation ouvert à tous les étudiants. </p>
       </div>
+      
+
+      <div class="w-full lg:w-6/12 px-4">
+      <p class="text-l leading-relaxed m-4 text-blueGray-500">Doté d'équipements de pointe et d'outils technologiques variés, le Faclab offre un environnement propice à l'expérimentation et à l'apprentissage. Que vous soyez passionné par la robotique, l'impression 3D, la réalité virtuelle ou la programmation, vous trouverez ici les ressources nécessaires pour concrétiser vos idées les plus audacieuses.  
+        </p>
       </div>
+
+    </div>
          
 
  {% endblock %}
