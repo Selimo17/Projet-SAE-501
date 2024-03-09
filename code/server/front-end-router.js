@@ -91,7 +91,7 @@ router.get("/a-propos(.html)?", async (_req, res) => {
 router.get("/sur-les-medias(.html)?", async (_req, res) => {
     let options = {
         method: "GET",
-        url: `${res.locals.base_url}/api/saes?per_page=9`,
+        url: `${res.locals.base_url}/api/divers?per_page=9`,
     };
 
     let result = null;
@@ -100,7 +100,7 @@ router.get("/sur-les-medias(.html)?", async (_req, res) => {
     } catch (e) {}
 
     res.render("pages/front-end/sur-les-medias.njk", {
-        list_saes: result.data,
+        list_divers: result.data,
     });
 });
 

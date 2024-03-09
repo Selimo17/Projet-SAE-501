@@ -6,6 +6,7 @@ import listArticles, { article } from "./swagger-schemas/article.js";
 import listCommentsArticle, { commentArticle } from "./swagger-schemas/comment-article.js";
 import listSAEs, { sae } from "./swagger-schemas/sae.js";
 import listAuthors, { author } from "./swagger-schemas/author.js";
+import listDivers, { diver } from "./swagger-schemas/diver.js";
 
 import swaggerJSDoc from "swagger-jsdoc";
 
@@ -29,6 +30,8 @@ const options = {
                 SAE: sae,
                 ListAuthors: listAuthors,
                 Author: author,
+                Diver : diver,
+                ListDivers : listDivers,
                 Error: {
                     type: "object",
                     properties: {
