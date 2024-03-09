@@ -4,6 +4,7 @@ import "/src/styles/index.scss";
 import "/src/styles/tailwind.css";
 import "/src/styles/contact.scss";
 import "/src/styles/footer.scss";
+import "/src/styles/sur-les-medias.scss";
 
 // Keep scroll position between page in navigation for mobile
 const sidebar = document.querySelector("[data-navigation]");

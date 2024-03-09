@@ -12,6 +12,8 @@ import SAERouter from './sae.js'
 import ArticleRouter from './article.js'
 // Importation du route pour Authors
 import AuthorRouter from './author.js'
+// Importation du route pour Divers
+import DiverRouter from './diver.js'
 
 const router = express.Router();
 
@@ -49,6 +51,8 @@ router.use(SAERouter)
 router.use(ArticleRouter)
 // Utilisation du route pour Author
 router.use(AuthorRouter)
+// Utilisation du route pour Diver
+router.use(DiverRouter)
 
 router.get("/", async (_req, res) => {
     const queryParams = querystring.stringify({ per_page: 5 });

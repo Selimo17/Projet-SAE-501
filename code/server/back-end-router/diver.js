@@ -5,12 +5,13 @@ import querystring from "querystring";
 
 import upload from "../uploader.js";
 
-const base = "authors";
+const base = "divers";
 const router = express.Router();
 
-// Get multiple articles
+// Get multiple videos
 router.get(`/${base}`, async (req, res) => {
     const queryParams = querystring.stringify(req.query);
+
     let options = {
         method: "GET",
         url: `${res.locals.base_url}/api/${base}?${queryParams}`,
@@ -20,12 +21,12 @@ router.get(`/${base}`, async (req, res) => {
         result = await axios(options);
     } catch (e) {}
     
-    res.render("pages/back-end/authors/list.njk", {
-        list_authors: result.data,
+    res.render("pages/back-end/divers/list.njk", {
+        list_divers: result.data,
     });
 });
 
-// Get or create author
+// Get or create
 router.get([`/${base}/:id`, `/${base}/add`], async (req, res) => {
     let options = {
         method: "GET",
@@ -45,14 +46,14 @@ router.get([`/${base}/:id`, `/${base}/add`], async (req, res) => {
         }
     }
 
-    res.render("pages/back-end/authors/add-edit.njk", {
-        author: result?.data || {},
+    res.render("pages/back-end/divers/add-edit.njk", {
+        diver: result?.data || {},
         list_errors: listErrors,
         is_edit: isEdit,
     });
 });
 
-// Create or update author 
+// Create or update 
 router.post(`/${base}/:id`, upload.single("image"), async (req, res) => {
     let ressource = null;
     const isEdit = mongoose.Types.ObjectId.isValid(req.params.id)
@@ -90,8 +91,8 @@ router.post(`/${base}/:id`, upload.single("image"), async (req, res) => {
     } finally {
         if (listErrors.length || isEdit) {
             // Ajout du lien add edit
-            res.render("pages/back-end/authors/add-edit.njk", {
-                author: ressource,
+            res.render("pages/back-end/divers/add-edit.njk", {
+                diver: ressource,
                 list_errors: listErrors,
                 is_edit: isEdit,
                 is_success: listErrors.length === 0
