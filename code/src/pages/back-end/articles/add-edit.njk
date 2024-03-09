@@ -57,11 +57,16 @@
 				</label>
 
 				<label>
-					 <select id="authorsDropdown">
-        <option value="">Sélectionnez un auteur</option>
-    </select>
+					<select id="authorDropdown">
+						{% for item in list_authors.data %}
+							<option value="{{ item._id }}">{{ item.firstname }} {{ item.lastname }}</option>
+							{% else %}
+							<option value = "Pas d'auteurs disponible">Pas d'auteurs disponible</option>
+						{% endfor %}
+					</select>
 
-    <script>
+
+    {# <script>
         fetch('/authors')
             .then(response => response.json())
             .then(authors => {
@@ -73,7 +78,7 @@
                 });
             })
             .catch(error => console.error('Error fetching authors:', error));
-    </script>
+    </script> #}
 				</label>
 
 				<button class="mt-3 px-4 py-2 font-semibold text-sm bg-cyan-500 hover:bg-cyan-600 text-white rounded-2xl shadow-sm" type="submit">Sauvegarder</button>
