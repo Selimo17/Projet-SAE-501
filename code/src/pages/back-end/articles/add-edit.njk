@@ -56,17 +56,25 @@
 					<p id="error-content" class="text-red-500 hidden" data-error-message="content">Il faut mettre du contenut</p>
 				</label>
 
-				<label>
-					<select id="authorDropdown">
+				<label class="block mb-4">
+					<span class="font-bold text-slate-700 after:content-['*'] after:ml-0.5 after:text-red-500">Auteur</span>
+					<select id="authorDropdown" name="author" class="block bg-white w-full border border-slate-300 rounded-md py-2 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm">
+						<option value="">Sélectionnez un auteur</option>
 						{% for item in list_authors.data %}
-							<option value="{{ item._id }}">{{ item.firstname }} {{ item.lastname }}</option>
+							<option value="{{ item._id }}">{{ item.firstname }}</option>
 							{% else %}
 							<option value = "Pas d'auteurs disponible">Pas d'auteurs disponible</option>
 						{% endfor %}
 					</select>
+					
+				</label>
 
 
-    {# <script>
+
+				
+
+
+     {# <script>
         fetch('/authors')
             .then(response => response.json())
             .then(authors => {
@@ -78,7 +86,7 @@
                 });
             })
             .catch(error => console.error('Error fetching authors:', error));
-    </script> #}
+    </script>  #}
 				</label>
 
 				<button class="mt-3 px-4 py-2 font-semibold text-sm bg-cyan-500 hover:bg-cyan-600 text-white rounded-2xl shadow-sm" type="submit">Sauvegarder</button>
@@ -86,4 +94,25 @@
 			</form>
 		</div>
 	</div>
+
+	<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Fetch authors using Axios
+        axios.get("http://localhost:3000/api/auteurs") // Replace '/api/authors' with your actual API endpoint
+            .then(function (response) {
+                const authors = response.data;
+                // Populate the authors dropdown
+                const authorDropdown = document.querySelector('select[firstname="author"]');
+                authors.forEach(function (author) {
+                    const option = document.createElement('option');
+                    option.value = author._id;
+                    option.text = author.firstname;
+                    authorDropdown.appendChild(option);
+                });
+            })
+            .catch(function (error) {
+                console.error('Error fetching authors:', error);
+            });
+    });
+</script>
 {% endblock %}

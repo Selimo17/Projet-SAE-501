@@ -12,7 +12,7 @@ import SAERouter from './sae.js'
 import ArticleRouter from './article.js'
 import AuthorRouter from './author.js'
 import messageRouter from './message.js'
-
+import jpoRouter from './jpo.js'
 // Importation du route pour Divers
 import DiverRouter from './diver.js'
 
@@ -54,7 +54,7 @@ router.use(AuthorRouter)
 router.use(messageRouter)
 // Utilisation du route pour Diver
 router.use(DiverRouter)
-
+router.use(jpoRouter)
 router.get("/", async (_req, res) => {
     const queryParams = querystring.stringify({ per_page: 5 });
 

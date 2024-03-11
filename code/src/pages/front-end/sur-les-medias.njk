@@ -18,30 +18,20 @@
       
         <div class="w-full max-w-3xl grid grid-cols-2 gap-8">
             <!-- Première ligne de vidéos -->
+            {% for item in list_divers.data %}
             <div class="flex flex-col items-center">
-                <h3 class="text-l font-medium mb-2">La nouvelle reforme : le BUT MMI</h3>
+                <h3 class="text-l font-medium mb-2">{{ item.title }}</h3>
                 
-                <iframe width="360" height="215" src="https://www.youtube.com/embed/oiEbQF7qfBU" frameborder="0" allowfullscreen></iframe>
+                <iframe width="360" height="215" src="{{ item.yt_link }}" ></iframe>
             </div>
+            {% else %}
+                    <p>Pas de contenu pour le moment</p>
+                
+{% endfor %}
 
-            <div class="flex flex-col items-center">
-                <h3 class="text-l font-medium mb-2">Pourquoi étudier à l'IUT CYU?</h3>
-                
-                <iframe width="360" height="215" src="https://www.youtube.com/embed/SyjF4h2Zb7Q" frameborder="0" allowfullscreen></iframe>
-            </div>
 
-            <!-- Deuxième ligne de vidéos -->
-            <div class="flex flex-col items-center">
-                <h3 class="text-l font-medium mb-2">JOB interview en anglais</h3>
-                
-                <iframe width="360" height="215" src="https://www.youtube.com/embed/t72pdxpNjyc" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <div class="flex flex-col items-center">
-                <h3 class="text-l font-medium mb-2">L'importance de l'IUT</h3>
-                
-                <iframe width="360" height="215" src="https://www.youtube.com/embed/xD4wshE0hEg" frameborder="0" allowfullscreen></iframe>
-            </div>
+            
+            
         </div>
     </section>
 {% endblock %}

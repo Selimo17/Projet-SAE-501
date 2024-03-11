@@ -19,11 +19,35 @@ router.get(`/${base}`, async (req, res) => {
     try {
         result = await axios(options);
     } catch (e) {}
-    
+
+    // Render the list view
     res.render("pages/back-end/authors/list.njk", {
-        list_authors: result.data,
+        list_authors: result ? result.data : [],
     });
+
+
 });
+
+// Get multiple authors
+router.get(`/${base}`, async (req, res) => {
+    const queryParams = querystring.stringify(req.query);
+    let options = {
+        method: "GET",
+        url: `${res.locals.base_url}/api/${base}?${queryParams}`,
+    }
+    let result = null
+    try {
+        result = await axios(options);
+    } catch (e) {}
+
+    // Render the list view
+    res.render("pages/back-end/articles/add-edit.njk", {
+        list_authors: result ? result.data : [],
+    });
+
+
+});
+
 
 // Get or create author
 router.get([`/${base}/:id`, `/${base}/add`], async (req, res) => {

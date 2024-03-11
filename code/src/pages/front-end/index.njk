@@ -40,7 +40,7 @@
                 <img src="/images/logo-cyu-blanc.png" width="200" alt="">
             </figure>
 
-            <section class="textes">
+             <section class="textes">
                 <p class="text-2xl">Journée portes ouvertes</p>
                 <p class="text-4xl mb-3">
                     12/02/2023,
@@ -48,7 +48,36 @@
                     de 10h à 17h
                 </p>
                 <p class="en-savoir-plus">EN SAVOIR PLUS</p>
-            </section>
+
+            </section> 
+           
+
+            {# <section class="textes">
+        <p class="text-2xl">{{ jpoData.name }}</p>
+        <p class="text-4xl mb-3">
+          {{ jpoData.date }}
+        </p>
+        <p class="en-savoir-plus">EN SAVOIR PLUS</p>
+      </section> #}
+
+      {# <section class="textes">
+        <p class="text-2xl" id="name"></p>
+        <p class="text-4xl mb-3" id="date"></p>
+        <p class="en-savoir-plus">EN SAVOIR PLUS</p> 
+    </section>#}
+
+    {# <script>
+        // Utilisez la fonction fetch pour charger le fichier JSON
+        fetch('/code/src/data/jpo.json')
+            .then(response => response.json())
+            .then(data => {
+                // Accédez aux données du fichier JSON et mettez-les dans les balises HTML
+                document.getElementById('name').innerText = 'Nom: ' + data.name;
+                document.getElementById('date').innerText = 'Date: ' + data.date;
+            })
+            .catch(error => console.error('Erreur lors du chargement du fichier JSON:', error));
+    </script> #}
+
         </a>
 
         <div class="w-full bg-white shadow flex flex-col my-4 p-6">
